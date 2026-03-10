@@ -10,8 +10,8 @@ client = TelegramClient("session", api_id, api_hash)
 
 async def main():
     while True:
-        now = datetime.now().strftime("%H:%M")
-        await client(UpdateProfileRequest(about=f"🕒 {now}"))
+        time = datetime.now().strftime("🕐 %H:%M")
+        await client(UpdateProfileRequest(first_name=time))
         await asyncio.sleep(60)
 
 async def start():
